@@ -9,3 +9,4 @@
 sites/*
 !sites/default
 !sites/all
+!sites/development.services.yml
