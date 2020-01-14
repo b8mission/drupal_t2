@@ -3,7 +3,7 @@ type: theme
 description: 'A cuddly theme that offers extra fluffiness.'
 core: 8.x
 libraries:
-  - fluffiness/global-styling
+#  - fluffiness/global-styling
 base theme: bartik
 regions:
   header: Header
