@@ -1,0 +1,14 @@
+uuid: c5ae0529-1ffd-4860-a9c8-979820263752
+name: drupal1
+mail: blahblahblah@drup.ru
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

@@ -1,0 +1,23 @@
+uuid: 7819e38e-b7c6-415f-89da-e3ad607e2f70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_v
+    - node.type.device
+  module:
+    - link
+id: node.device.field_v
+field_name: field_v
+entity_type: node
+bundle: device
+label: 'vendor page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

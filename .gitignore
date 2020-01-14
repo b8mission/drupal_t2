@@ -1,0 +1,10 @@
+#ingore all
+/*
+#except
+!.gitignore
+!composer.json
+!composer.lock
+!config-export/
+!sites
+sites/*
+!sites/default

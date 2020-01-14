@@ -1,0 +1,44 @@
+uuid: 48ee1fab-3920-406e-8665-ba48807cb734
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.device.body
+    - field.field.node.device.field_c
+    - field.field.node.device.field_dcomments
+    - field.field.node.device.field_pictures
+    - field.field.node.device.field_price
+    - field.field.node.device.field_rele
+    - field.field.node.device.field_v
+    - field.field.node.device.field_vendor
+    - node.type.device
+  module:
+    - text
+    - user
+id: node.device.teaser
+targetEntityType: node
+bundle: device
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_c: true
+  field_dcomments: true
+  field_pictures: true
+  field_price: true
+  field_rele: true
+  field_v: true
+  field_vendor: true
