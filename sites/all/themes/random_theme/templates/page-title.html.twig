@@ -1,0 +1,11 @@
+{% set title_attributes = title_attributes.addClass('title') %}
+
+{{ title_prefix }}
+{% if title %}
+  <h1 {{ title_attributes.addClass('page-title') }}>{{ title }}</h1>
+{% endif %}
+
+    <h6>random_theme trial</h6>  
+{{ title_suffix }}
+
+
