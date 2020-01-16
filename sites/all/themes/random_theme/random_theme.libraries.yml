@@ -1,0 +1,11 @@
+# random_theme.libraries.yml
+simple_script:
+  version: 1.x
+  js:
+    templates/simple_script.js: {}
+
+
+global-scripts:
+  version: 1.x
+  js:
+    templates/simple_script.js: {}
