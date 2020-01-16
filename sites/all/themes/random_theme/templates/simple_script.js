@@ -6,7 +6,7 @@ function do_it()
     color += letters[Math.floor(Math.random() * 16)];
   }
 
-  document.getElementsByClassName('clearfix region region-header')[0].style.background = color;
+  document.getElementById('header').style.background = color;
 }
-
 do_it();
+//setInterval(do_it, 1000);
