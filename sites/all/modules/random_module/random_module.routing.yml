@@ -1,0 +1,7 @@
+hello.content:
+  path: '/random_page'
+  defaults:
+    _controller: 'Drupal\random_module\Controller\HelloController::content'
+    _title: 'Random!'
+  requirements:
+    _permission: 'access content'
