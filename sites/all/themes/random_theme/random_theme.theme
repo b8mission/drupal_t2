@@ -1,19 +1,24 @@
 <?php
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-
 /**
  * Implements hook_preprocess().
  */
 function random_theme_preprocess_page_title(&$data) {
 
-  $usr = $data['user']->getAccountName();
-  $pg = $data['title']['#markup'];
+  if (!is_array($data['title'] ?? FALSE)) {
+    return;
+  }
 
-  $data['title']['#markup'] = Drupal\Core\Render\Markup::create(($pg . ', ' . $usr));
-  $data['title']['#children'] = Drupal\Core\Render\Markup::create(($pg . ', ' . $usr));
+  $usr = ($data['user']->getAccountName() ?? FALSE);
+  $pg  = ($data['title']['#markup'] ?? FALSE);
 
+  if ($usr === FALSE || $pg === FALSE) {
+    return;
+  }
+
+
+  $data['title']['#markup']   = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
+  $data['title']['#children'] = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
+
+  return;
 
 }
