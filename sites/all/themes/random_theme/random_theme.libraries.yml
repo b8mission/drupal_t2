@@ -9,3 +9,9 @@ global-scripts:
   version: 1.x
   js:
     templates/simple_script.js: {}
+
+
+my-random-lib:
+  version: 1.x
+  js:
+    templates/random_colors.js: {}

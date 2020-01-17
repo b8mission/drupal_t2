@@ -5,3 +5,23 @@ hello.content:
     _title: 'Random!'
   requirements:
     _permission: 'access content'
+
+
+bigben.content:
+  path: '/bigben'
+  defaults:
+    _controller: 'Drupal\random_module\Controller\BigBenController::content'
+    _title: 'BigBen'
+  requirements:
+    _permission: 'access administration pages'
+
+
+custom_rest_module.get_latest_nodes:
+  path: 'api/rest-endpoint/latest'
+  defaults:
+    _controller: 'Drupal\random_module\Controller\CustomRestController::getLatestNodes'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+    _permission: 'access custom rest endpoint'
+

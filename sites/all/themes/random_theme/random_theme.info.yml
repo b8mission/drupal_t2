@@ -5,6 +5,7 @@ core: 8.x
 libraries:
 #  - fluffiness/global-styling
   -  random_theme/global-scripts
+  -  random_theme/my-random-lib
 base theme: bartik
 regions:
   header: Header
