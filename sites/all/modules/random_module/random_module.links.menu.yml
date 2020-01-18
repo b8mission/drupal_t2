@@ -1,19 +1,19 @@
 hello.admin:
   title: 'Random route'
-  description: 'non-random page'
+  description: 'random page'
   parent: system.admin_config_development
   route_name: hello.content
   weight: 100
 
 bigben.admin:
   title: 'BigBen time'
-  description: 'just check it before the ride'
+  description: 'check it'
   parent: system.admin_config_development
   route_name: bigben.content
   weight: 200
 
 restroute.admin:
-  title: 'just a rest route'
+  title: 'rest route'
   description: 'yeah'
   parent: system.admin_config_development
   route_name: custom_rest_module.get_latest_nodes

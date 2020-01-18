@@ -17,11 +17,11 @@ bigben.content:
 
 
 custom_rest_module.get_latest_nodes:
-  path: 'api/rest-endpoint/latest'
+  path: '/api/random-endpoint'
   defaults:
-    _controller: 'Drupal\random_module\Controller\CustomRestController::getLatestNodes'
+    _controller: 'Drupal\random_module\Controller\CustomRestController::getRandomNodes'
   methods: [GET]
   requirements:
     _access: 'TRUE'
-    _permission: 'access custom rest endpoint'
+  #  _permission: 'access custom rest endpoint'
 

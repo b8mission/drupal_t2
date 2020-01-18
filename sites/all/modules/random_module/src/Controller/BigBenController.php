@@ -8,7 +8,7 @@ class BigBenController extends \Drupal\Core\Controller\ControllerBase {
 
   public function content() {
 
-    $rstring = 'The Big Ben\'s time is ';
+    $rstring = 'Big Ben time is ';
 
     $response = ['#type' => 'markup', '#markup' => t($rstring . 'unknown')];
 
