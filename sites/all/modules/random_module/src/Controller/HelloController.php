@@ -16,9 +16,13 @@ class HelloController extends ControllerBase {
    *   Return markup array.
    */
   public function content() {
+
+    $template = include('templates/RandomPage.php');
+
+
     return [
       '#type'   => 'markup',
-      '#markup' => $this->t('Random page!'),
+      '#markup' => $this->t(($template)),
     ];
   }
 

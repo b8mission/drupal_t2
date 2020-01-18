@@ -19,7 +19,7 @@ bigben.content:
 custom_rest_module.get_latest_nodes:
   path: '/api/random-endpoint'
   defaults:
-    _controller: 'Drupal\random_module\Controller\CustomRestController::getRandomNodes'
+    _controller: 'Drupal\random_module\Controller\RandomRestController::getRandomNodes'
   methods: [GET]
   requirements:
     _access: 'TRUE'
