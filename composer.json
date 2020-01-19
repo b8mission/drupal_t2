@@ -24,6 +24,7 @@
         "drupal/devel": "^2.1",
         "drupal/features": "^3.8",
         "drupal/recaptcha": "^2.4",
+        "drupal/restui": "^1.17",
         "drupal/twig_xdebug": "^1.1",
         "drupal/webform": "^5.6"
     },

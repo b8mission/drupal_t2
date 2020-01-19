@@ -768,5 +768,3 @@ $databases['default']['default'] = array (
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_0iH7HBC0ZfDSciRFRuOGRcbHc84UoFB_V0S_9Ms8KaF1luTPkzKoJ1h2MrwpPVPZVuUZPrQ4NQ/sync';
 */
-
-require_once('local_settings.php');
