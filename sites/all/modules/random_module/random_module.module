@@ -1,0 +1,35 @@
+<?php
+
+const LOREM_IPSUM_TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum';
+
+function random_module_cron() {
+
+  //get new title---------------------------------------------------------------
+  $word_array = explode(' ', LOREM_IPSUM_TEXT);
+  $new_title  = ' ';
+  $words_quantity = random_int(1, 3);
+
+  for ($i = 0; $i < $words_quantity; $i++) {
+    $random    = random_int(0, count($word_array) - 1);
+    $new_title .= ' ' . $word_array[$random];
+  }
+
+  //format title----------------------------------------------------------------
+  $new_title = preg_replace('/[^A-Za-z0-9 ]/','',$new_title);
+  $new_title = strtolower($new_title);
+
+
+  //set-------------------------------------------------------------------------
+  \Drupal::configFactory()
+         ->getEditable('system.site')
+         ->set('name', $new_title)
+         ->save();
+
+  return;
+}
