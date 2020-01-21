@@ -17,7 +17,7 @@ class RandomPageController extends ControllerBase {
    */
   public function content() {
 
-    $template = $this->front();//include('templates/RandomPage.php');
+    $template = $this->front();
 
     $build['form']['#attached']['library'][] = 'random_module/random_page_js_lib';
 

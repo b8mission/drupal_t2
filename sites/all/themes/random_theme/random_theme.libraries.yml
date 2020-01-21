@@ -15,3 +15,9 @@ my-random-lib:
   version: 1.x
   js:
     templates/random_colors.js: {}
+
+random-menu:
+  version: 1.x
+  css:
+    theme:
+      templates/random_menu.css: {}

@@ -28,6 +28,8 @@ class RandomDevicesTaker {
                     ->execute();
     $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
+    $nodes = array_values($nodes);
+
     return $nodes;
   }
 
@@ -35,8 +37,9 @@ class RandomDevicesTaker {
     $assoc_array = [];
 
     foreach ($indexes as $ind) {
-      $t = $nodes[$ind + 1]->getTypedData()->get('title')->getValue();
-      $b = $nodes[$ind + 1]->getTypedData()->get('body')->getValue();
+
+      $t = $nodes[$ind]->getTypedData()->get('title')->getValue();
+      $b = $nodes[$ind]->getTypedData()->get('body')->getValue();
 
 
       if ($titlesOnly) {//take only the titles
@@ -57,15 +60,15 @@ class RandomDevicesTaker {
       return FALSE;
     }
 
+    //randomize quantity--------------------------------------------------------
     $random_quantity = random_int(1, (ceil($total_count / 2)));
 
     if ($random_quantity < 1) {
       return FALSE;
     }
-    //random quantity is chosen
 
 
-    //indexes randomize is next
+    //indexes randomize---------------------------------------------------------
     $indexes = [];
     for ($x = 0; $x < $random_quantity; $x++) {
 

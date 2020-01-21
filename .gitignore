@@ -1,12 +1,13 @@
 #ingore all
 /*
+README.*
+example.sites.php
+settings.local.php
 #except
 !.gitignore
 !composer.json
 !composer.lock
 !config-export/
 !sites
-sites/*
 !sites/default
 !sites/all
-!sites/development.services.yml
