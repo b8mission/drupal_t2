@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
         "drupal/captcha": "^1.6",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
@@ -36,9 +37,15 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "secure-http": false,
         "sort-packages": true
     },
     "extra": {
+        "patches": {
+            "drupal/devel": {
+                "Generate translated content https://www.drupal.org/project/devel/issues/1277654": "https://www.drupal.org/files/issues/2019-08-18/devel-generate-translated-content-1277654-38.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./"
