@@ -28,7 +28,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-$settings['config_sync_directory'] = 'sites/default/files/config_0iH7HBC0ZfDSciRFRuOGRcbHc84UoFB_V0S_9Ms8KaF1luTPkzKoJ1h2MrwpPVPZVuUZPrQ4NQ/sync';
+$settings['config_sync_directory'] = 'sites/default/sync';
 
 
 /**
