@@ -19,10 +19,8 @@ function random_theme_preprocess_page_title(&$data) {
   $data['title']['#markup']   = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
   $data['title']['#children'] = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
 
-
-//  $data['title']['#attached']['library'][] = 'random_theme/random-menu';
-//  $data['#attached']['library'][] = 'random_theme/random-menu';
   $data['#attached']['library'][] = 'random_theme/random-menu';
+  $data['#attached']['library'][] = 'random_theme/random-color';
 
   return;
 

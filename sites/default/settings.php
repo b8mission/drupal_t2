@@ -710,6 +710,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  $settings['trusted_host_patterns'] = [
     '^drupal-student\.ru$',
     '^drupal1\.ru$',
+   '^war-king\.hldns\.ru$',
     #'^example\.org$',
     #'^.+\.example\.org$',
   ];
