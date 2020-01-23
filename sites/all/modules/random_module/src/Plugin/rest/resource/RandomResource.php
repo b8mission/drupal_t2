@@ -27,6 +27,8 @@ class RandomResource extends ResourceBase {
    * @return \Drupal\rest\ResourceResponse
    */
   public function get() {
+    \Drupal\random_module\Classes\EndpointVisitorCounter::recordVisit(1);
+
 
     $cacheable_dependency = [
       '#cache' => [

@@ -32,7 +32,7 @@ class RandomBlock extends BlockBase {
       'enjoy it',
       'glad to see yea!',
       'seems good!',
-      'the real realm'
+      'the real realm',
     ];
 
     $rand = random_int(0, count($stash_array) - 1);

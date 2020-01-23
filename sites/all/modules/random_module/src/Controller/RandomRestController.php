@@ -13,6 +13,8 @@ class RandomRestController extends ControllerBase {
 
   /** * Return random nodes in a formatted JSON response. * * @return \Symfony\Component\HttpFoundation\JsonResponse * The formatted JSON response. */
   public function getRandomNodes() {
+    \Drupal\random_module\Classes\EndpointVisitorCounter::recordVisit(0);
+
 
     $nids        = \Drupal::entityQuery('node')
                           ->condition('type', 'device')
