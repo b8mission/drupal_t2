@@ -16,13 +16,17 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
         "drupal/captcha": "^1.6",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/devel": "^2.1",
+        "drupal/features": "^3.8",
         "drupal/recaptcha": "^2.4",
+        "drupal/restui": "^1.17",
+        "drupal/twig_xdebug": "^1.1",
         "drupal/webform": "^5.6"
     },
     "require-dev": {
@@ -33,9 +37,15 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "secure-http": false,
         "sort-packages": true
     },
     "extra": {
+        "patches": {
+            "drupal/devel": {
+                "Generate translated content https://www.drupal.org/project/devel/issues/1277654": "https://www.drupal.org/files/issues/2019-08-18/devel-generate-translated-content-1277654-38.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./"

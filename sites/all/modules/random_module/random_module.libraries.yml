@@ -1,0 +1,5 @@
+# random_module.libraries.yml
+random_page_js_lib:
+  version: 1.x
+  js:
+    templates/simple_script.js: {}

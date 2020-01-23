@@ -1,0 +1,88 @@
+<?php
+
+const LOREM_IPSUM_TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum';
+
+function random_module_cron() {
+
+  //get new title---------------------------------------------------------------
+  $word_array     = explode(' ', LOREM_IPSUM_TEXT);
+  $new_title      = ' ';
+  $words_quantity = random_int(1, 3);
+
+  for ($i = 0; $i < $words_quantity; $i++) {
+    $random    = random_int(0, count($word_array) - 1);
+    $new_title .= ' ' . $word_array[$random];
+  }
+
+  //format title----------------------------------------------------------------
+  $new_title = preg_replace('/[^A-Za-z0-9 ]/', '', $new_title);
+  $new_title = strtolower($new_title);
+
+
+  //set-------------------------------------------------------------------------
+  \Drupal::configFactory()
+         ->getEditable('system.site')
+         ->set('name', $new_title)
+         ->save();
+
+  return;
+}
+
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup mymodule
+ */
+function random_module_schema() {
+  $schema['random_module_endpoints_visitors'] = [
+    'description' => 'random_module database table',
+    'fields'      => [
+      'id'         => [
+        'type'     => 'serial',
+        'length'   => 11,
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+
+      'ip_address' => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'description' => 'IP Address',
+      ],
+      'date'       => [
+        'type'        => 'int',
+        'length'      => 100,
+        'not null'    => TRUE,
+        'unsigned'    => TRUE,
+        'description' => 'Timestamp when this record was submitted',
+      ],
+      'endpoint_id' =>[
+        'type' => 'int',
+        'length'=>'3',
+        'not null' => FALSE,
+        'unsigned' => TRUE,
+        'description' => 'endpoint id',
+        'default' => NULL,
+      ]
+    ],
+    'primary key' => ['id'],
+    'indexes'     => [
+      'random_module_field__id__value_id'   => ['id'],
+  //    'mymodule_field__uid__value_uid' => ['uid'],
+    ],
+  ];
+
+  return $schema;
+}

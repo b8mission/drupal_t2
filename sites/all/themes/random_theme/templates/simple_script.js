@@ -8,5 +8,5 @@ function do_it()
 
   document.getElementById('header').style.background = color;
 }
+
 do_it();
-//setInterval(do_it, 1000);

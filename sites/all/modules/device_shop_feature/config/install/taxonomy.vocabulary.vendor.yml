@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: vendor
+vid: vendor
+description: ''
+weight: 0

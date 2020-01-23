@@ -1,8 +1,0 @@
-uuid: dad4d375-58b7-4396-b19d-54472839ede4
-langcode: en
-status: true
-dependencies: {  }
-name: 'controllers type'
-vid: controllers_type
-description: ''
-weight: 0

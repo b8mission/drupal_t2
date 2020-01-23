@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dcomments
+label: dcomments
+target_entity_type_id: block_content
+description: ''
