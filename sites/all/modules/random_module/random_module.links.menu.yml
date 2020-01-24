@@ -1,6 +1,6 @@
 hello.admin:
   title: 'Random route'
-  description: 'random page'
+  description: 'this page uses module endpoints'
   parent: system.admin_config_development
   route_name: hello.content
   weight: 100
@@ -13,8 +13,23 @@ bigben.admin:
   weight: 200
 
 restroute.admin:
-  title: 'rest route'
+  title: 'rest route 1'
   description: 'yeah'
   parent: system.admin_config_development
   route_name: custom_rest_module.get_latest_nodes
   weight: 200
+
+random_settings.admin:
+  title: 'random module settings'
+  description: 'wow. we did it'
+  parent: system.admin_config_development
+  route_name: random.settings
+  weight: 200
+
+
+#restroute2.admin:
+#  title: 'rest route 2'
+#  description: 'yeah'
+#  parent: system.admin_config_development
+#  route_name: RandomResource
+#  weight: 200

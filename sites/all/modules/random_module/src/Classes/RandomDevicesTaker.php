@@ -36,21 +36,6 @@ class RandomDevicesTaker {
     return $nodes;
   }
 
-  private static function getNodesLvl2() {
-    $database = \Drupal::database();
-
-    //  $conn = \Drupal\Core\Database\Database::getConnection();
-
-    $query = \ Drupal:: database()
-                     ->select('node_field_data', 'n')
-                     ->fields('n', ['nid', 'title'])
-                     ->orderBy('n.created', 'DESC')
-                     ->range(0, 50);
-    return $query->execute()
-                 ->fetchAll();
-
-  }
-
   private static function getNodesByIndexes(array &$nodes, &$indexes, bool $titlesOnly = FALSE): array {
     $assoc_array = [];
 

@@ -17,19 +17,26 @@
  */
 
 
-$databases['default']['default'] = array (
-  'database' => 'drupal',
-  'username' => 'drupal',
-  'password' => 'drupalpass',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
+$databases['default']['default'] = [
+  'database'  => 'DB',
+  'username'  => 'LOGIN',
+  'password'  => 'PASSWORD',
+  'prefix'    => '',
+  'host'      => 'localhost',
+  'port'      => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+  'driver'    => 'mysql',
+];
+
 
 $settings['config_sync_directory'] = 'sites/default/sync';
 
+/*
+ * $settings['trusted_host_patterns'] = [
+  '^example\.org$',
+  '^.+\.example\.org$',
+];
+ */
 
 /**
  * Assertions.
@@ -67,7 +74,7 @@ $config['system.logging']['error_level'] = 'verbose';
  * Disable CSS and JS aggregation.
  */
 $config['system.performance']['css']['preprocess'] = FALSE;
-$config['system.performance']['js']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess']  = FALSE;
 
 /**
  * Disable the render cache.
