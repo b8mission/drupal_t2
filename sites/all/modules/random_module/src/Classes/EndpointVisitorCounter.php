@@ -4,8 +4,14 @@ namespace Drupal\random_module\Classes;
 
 class EndpointVisitorCounter {
 
-
   public static function recordVisit($endpoint_id = NULL) {
+
+    $config = \Drupal::config('random_module.settings');
+
+    if (($config->get('enabled') ?? FALSE) !== TRUE) {
+      return;
+    }
+
 
     if (!is_int($endpoint_id) || $endpoint_id < 0) {
       $endpoint_id = 'NULL';
