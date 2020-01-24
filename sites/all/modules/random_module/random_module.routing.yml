@@ -25,3 +25,10 @@ custom_rest_module.get_latest_nodes:
     _access: 'TRUE'
   #  _permission: 'access custom rest endpoint'
 
+random.settings:
+  path: '/admin/structure/random_module/settings'
+  defaults:
+    _form: '\Drupal\random_module\Form\RandomModuleForm'
+    _title: 'Random Module Settings'
+  requirements:
+    _permission: 'administer site configuration'

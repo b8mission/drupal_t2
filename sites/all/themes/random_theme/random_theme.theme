@@ -4,24 +4,39 @@
  */
 function random_theme_preprocess_page_title(&$data) {
 
-  if (!is_array($data['title'] ?? FALSE)) {
+  $pg = '';
+
+  if (is_array($data['title'] ?? FALSE)) {
+    $pg = ($data['title']['#markup'] ?? '');
+  }
+  else if (is_string($data['title'])) {
+    $pg = (string) $data['title'];
+  }
+
+  $usr = ($data['user']->getAccountName() ?? '');
+
+  if (empty($usr) || empty($pg)) {
     return;
   }
 
-  $usr = ($data['user']->getAccountName() ?? FALSE);
-  $pg  = ($data['title']['#markup'] ?? FALSE);
+  $title = $pg . ' 4 u, ' . $usr;
 
-  if ($usr === FALSE || $pg === FALSE) {
-    return;
+  if (is_array($data['title'])) {
+    $data['title']['#markup']   = Drupal\Core\Render\Markup::create($title);
+    $data['title']['#children'] = Drupal\Core\Render\Markup::create($title);
+  }
+  else {
+    $data['title'] = $title;
   }
 
+  return;
+}
 
-  $data['title']['#markup']   = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
-  $data['title']['#children'] = Drupal\Core\Render\Markup::create($pg . ', ' . $usr);
+/**
+ * Implements hook_preprocess().
+ */
+function random_theme_preprocess_menu__footer(&$data){
 
   $data['#attached']['library'][] = 'random_theme/random-menu';
   $data['#attached']['library'][] = 'random_theme/random-color';
-
-  return;
-
 }

@@ -48,39 +48,47 @@ function random_module_schema() {
   $schema['random_module_endpoints_visitors'] = [
     'description' => 'random_module database table',
     'fields'      => [
-      'id'         => [
+      'id' => [
         'type'     => 'serial',
         'length'   => 11,
         'not null' => TRUE,
         'unsigned' => TRUE,
       ],
 
-      'ip_address' => [
+      'user_id' => [
+        'type'        => 'int',
+        'length'      => 100,
+        'not null'    => FALSE,
+        'unsigned'    => TRUE,
+        'description' => 'visitor\'s id. 0 if was not logged',
+      ],
+
+      'ip_address'  => [
         'type'        => 'varchar',
         'length'      => 255,
         'not null'    => TRUE,
         'description' => 'IP Address',
       ],
-      'date'       => [
+      'date'        => [
         'type'        => 'int',
         'length'      => 100,
         'not null'    => TRUE,
         'unsigned'    => TRUE,
         'description' => 'Timestamp when this record was submitted',
       ],
-      'endpoint_id' =>[
-        'type' => 'int',
-        'length'=>'3',
-        'not null' => FALSE,
-        'unsigned' => TRUE,
+      'endpoint_id' => [
+        'type'        => 'int',
+        'length'      => '3',
+        'not null'    => FALSE,
+        'unsigned'    => TRUE,
         'description' => 'endpoint id',
-        'default' => NULL,
-      ]
+        'default'     => NULL,
+      ],
     ],
     'primary key' => ['id'],
     'indexes'     => [
-      'random_module_field__id__value_id'   => ['id'],
-  //    'mymodule_field__uid__value_uid' => ['uid'],
+      'random_module_field__id__value_id' => ['id'],
+      //    'mymodule_field__uid__value_uid' => ['uid'],
     ],
   ];
 
